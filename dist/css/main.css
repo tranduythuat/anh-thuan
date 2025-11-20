@@ -1,0 +1,556 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "SVN-Gotham";
+  src: url("../../assets/fonts/SVN-GothamBook.woff2") format("woff2"), url("../fonts/SVN-GothamBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SVN-GothamLight";
+  src: url("../../assets/fonts/SVN-Gotham Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "1FTVBlushingRose";
+  src: url("../../assets/fonts/1FTVBlushingRose.woff2") format("woff2"), url("../fonts/1FTVBlushingRose.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 12.65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  background-color: #e8e6d9;
+}
+
+/* music */
+.player {
+  position: fixed;
+  bottom: 10px;
+  right: 1%;
+  max-width: 55px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  z-index: 9999;
+  border: 1px solid var(--text-title-color);
+}
+
+.player #iconSvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-title-color);
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Định nghĩa hoạt ảnh xoay */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 500px) {
+  body {
+    font-size: 2.53vw;
+  }
+  .player {
+    max-width: 11vw;
+  }
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: white;
+  padding: 1rem;
+}
+
+.image-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.image-wrapper img {
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.animate-flip {
+  transform-origin: left center;
+  transform: rotateY(-120deg) scale(0.9);
+  opacity: 0;
+  filter: brightness(0.6);
+  backface-visibility: hidden;
+  transition: none;
+}
+
+.animate-flip.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.timeline {
+  height: 200px;
+  width: 100%;
+  background-color: antiquewhite;
+  display: flex;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  border-radius: 12px;
+}
+
+.red {
+  background: #e74c3c;
+}
+
+.blue {
+  background: #3498db;
+}
+
+.green {
+  background: #2ecc71;
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 500/898;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 196, 145, 0.259)), url("../../assets/images/f9881bdc-adf7-4efb-839b-a954323d6a3f.JPG") no-repeat 10% 100%/cover;
+}
+.hero .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  font-family: "1FTVBlushingRose", sans-serif;
+}
+.hero .content p.date-range {
+  font-size: 44px;
+  letter-spacing: 5px;
+  margin-bottom: 6%;
+}
+.hero .content p.couple-names {
+  font-size: 18px;
+  margin-bottom: 5%;
+}
+.hero .content .invited-text {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 14%;
+}
+@media (max-width: 500px) {
+  .hero .content p.date-range {
+    font-size: 8.8vw;
+    letter-spacing: 1vw;
+  }
+  .hero .content p.couple-names {
+    font-size: 3.6vw;
+  }
+  .hero .content .invited-text {
+    font-size: 2.4vw;
+    letter-spacing: 0.4vw;
+  }
+}
+
+.invitation .content {
+  font-family: "1FTVBlushingRose", sans-serif;
+  width: 100%;
+  font-weight: 300;
+}
+.invitation .content .text-box {
+  padding: 10% 10% 20%;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+.invitation .content .text-box .initials h2 {
+  font-size: 70px;
+}
+.invitation .content .text-box .initials h2 span {
+  font-size: 30px;
+}
+.invitation .content .text-box .family-info {
+  margin-top: 15%;
+}
+.invitation .content .text-box .family-info p {
+  font-size: 11px;
+}
+.invitation .content .text-box .family-info p.en {
+  margin-top: 4%;
+}
+.invitation .content .text-box .invitation-text {
+  margin-top: 10%;
+}
+.invitation .content .text-box .invitation-text p {
+  font-size: 11px;
+}
+.invitation .content .text-box .invitation-text p.en {
+  margin-top: 4%;
+  margin-bottom: 15%;
+}
+.invitation .content .text-box .couple-info h2 {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.invitation .content .text-box .couple-info p.role {
+  font-size: 11px;
+}
+.invitation .content .text-box .couple-info p.divider {
+  margin-bottom: 10%;
+}
+.invitation .content .image-box {
+  width: 100%;
+  aspect-ratio: 500/812;
+  background: linear-gradient(to bottom, #e8e6d9, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../assets/images/IMG_5384.jpg") no-repeat 48% 100%/cover;
+}
+.invitation .content .image-box h2 {
+  font-family: "1FTVBlushingRose", sans-serif;
+  font-size: 56px;
+  font-weight: 100;
+  margin-top: 5%;
+}
+@media (max-width: 500px) {
+  .invitation .content .text-box {
+    letter-spacing: 0.2vw;
+  }
+  .invitation .content .text-box .initials {
+    max-width: 28vw;
+  }
+  .invitation .content .text-box .family-info p {
+    font-size: 2.2vw;
+  }
+  .invitation .content .text-box .invitation-text p {
+    font-size: 2.2vw;
+  }
+  .invitation .content .text-box .couple-info h2 {
+    font-size: 5.2vw;
+    letter-spacing: 0.4vw;
+  }
+  .invitation .content .text-box .couple-info p.role {
+    font-size: 2.2vw;
+  }
+  .invitation .content .image-box h2 {
+    font-size: 11.2vw;
+  }
+}
+
+.location {
+  width: 100%;
+}
+.location .content {
+  width: 100%;
+  font-family: "1FTVBlushingRose", sans-serif;
+}
+.location .content p {
+  font-size: 12.6px;
+}
+.location .content .header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10% 0 2%;
+}
+.location .content .header-section .time-and-location {
+  max-width: 185px;
+  width: 100%;
+}
+.location .content .header-section .time-and-location img {
+  width: 100%;
+  height: auto;
+}
+.location .content .header-section p.sub-en {
+  font-size: 10.6px;
+}
+.location .content .header-section h1.main-title {
+  font-size: 51px;
+  font-weight: 100;
+  margin-top: 8%;
+}
+.location .content .ceremony-block {
+  margin: 10% 0;
+}
+.location .content .ceremony-block h2.date {
+  font-size: 42px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  margin-top: 5%;
+}
+.location .content .ceremony-block .location-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.location .content .ceremony-block .location-details .location-icon {
+  max-width: 24px;
+  width: 100%;
+  margin: 10% 0 2%;
+}
+.location .content .ceremony-block .location-details .location-icon img {
+  width: 100%;
+  height: auto;
+}
+.location .content .ceremony-block .location-details .location-name {
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+.location .content .separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location .content .separator hr {
+  width: 18%;
+  border: 1px solid #000;
+}
+.location .content .image-block {
+  width: 100%;
+  aspect-ratio: 500/748;
+  background: url("../../assets/images/IMG_3608.JPG") no-repeat center/cover;
+  margin-top: 15%;
+}
+@media (max-width: 500px) {
+  .location .content p {
+    font-size: 2.52vw;
+  }
+  .location .content .header-section .time-and-location {
+    max-width: 37vw;
+  }
+  .location .content .header-section p.sub-en {
+    font-size: 2.12vw;
+  }
+  .location .content .header-section h1.main-title {
+    font-size: 10.2vw;
+  }
+  .location .content .ceremony-block h2.date {
+    font-size: 8.4vw;
+    letter-spacing: 0.8vw;
+  }
+  .location .content .ceremony-block .location-details .location-icon {
+    max-width: 4.8vw;
+  }
+  .location .content .ceremony-block .location-details .location-name {
+    font-size: 4vw;
+    letter-spacing: 0.4vw;
+  }
+}
+
+.rsvp {
+  width: 100%;
+}
+.rsvp .content {
+  width: 100%;
+  font-family: "1FTVBlushingRose", sans-serif;
+  font-weight: 100;
+  line-height: 1.2;
+  padding: 10% 10%;
+  text-align: left;
+}
+.rsvp .content .top-img {
+  width: 100%;
+  aspect-ratio: 386/216;
+  margin: 0 auto;
+}
+.rsvp .content .top-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 70%;
+}
+.rsvp .content .header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: start;
+  margin: 8% 0 15%;
+}
+.rsvp .content .header .main-heading, .rsvp .content .header .english-heading {
+  font-size: 25px;
+  font-weight: 100;
+  text-align: left;
+}
+.rsvp .content .info-notice {
+  margin-bottom: 6%;
+}
+.rsvp .content .info-notice p {
+  text-align: left;
+}
+.rsvp .content .info-notice p.vi {
+  margin-bottom: 3%;
+}
+.rsvp .content form .form-group {
+  margin-bottom: 15%;
+}
+.rsvp .content form .form-group input[type=text],
+.rsvp .content form .form-group input[type=number],
+.rsvp .content form .form-group textarea {
+  font-family: "SVN-Gotham", sans-serif;
+  width: 100%;
+  padding: 2% 4%;
+  border: 2px solid #000;
+  border-radius: 15px;
+  background: white;
+  font-size: 9.11px;
+  color: #000;
+  transition: border-color 0.3s ease;
+}
+.rsvp .content form .form-group input[type=text]:focus,
+.rsvp .content form .form-group input[type=number]:focus,
+.rsvp .content form .form-group textarea:focus {
+  outline: none;
+}
+.rsvp .content form .form-group textarea {
+  aspect-ratio: 500/100;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 9.6px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.rsvp .content form .form-group .attendance-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7%;
+  margin: 5% 0 3%;
+}
+.rsvp .content form .form-group .attendance-buttons .radio-wrapper {
+  position: relative;
+}
+.rsvp .content form .form-group .attendance-buttons .radio-wrapper input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.rsvp .content form .form-group .attendance-buttons .radio-label {
+  font-family: "SVN-GothamLight", sans-serif;
+  display: block;
+  padding: 3%;
+  border: 2px solid #000;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+}
+.rsvp .content form .form-group .attendance-buttons .radio-label:hover {
+  background: #ded1c3;
+}
+.rsvp .content form .form-group .attendance-buttons .radio-wrapper input[type=radio]:checked + .radio-label {
+  background: #838484;
+  border: 2px solid #838484;
+  color: white;
+}
+.rsvp .content form .submit-btn {
+  width: 38%;
+  padding: 2%;
+  background: #838484;
+  color: #000;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+  margin-bottom: 10%;
+}
+.rsvp .content form .submit-btn:hover {
+  background: rgb(90, 91, 91);
+  opacity: 0.9;
+}
+.rsvp .content form .submit-btn:active {
+  transform: scale(0.98);
+}
+@media (max-width: 500px) {
+  .rsvp .content .header .main-heading, .rsvp .content .header .english-heading {
+    font-size: 5vw;
+  }
+  .rsvp .content form .form-group input[type=text],
+  .rsvp .content form .form-group input[type=number],
+  .rsvp .content form .form-group textarea {
+    font-size: 1.822vw;
+  }
+  .rsvp .content form .form-group textarea {
+    font-size: 1.832vw;
+    letter-spacing: 0.1vw;
+  }
+  .rsvp .content form .submit-btn {
+    font-size: 2.4vw;
+    letter-spacing: 0.2vw;
+  }
+}
+
+.end {
+  width: 100%;
+  aspect-ratio: 500/768;
+  background: url("../../assets/images/IMG_6010.JPEG") no-repeat 48% 100%/cover;
+  justify-content: end;
+}
+.end .content {
+  width: 100%;
+  font-family: "1FTVBlushingRose", sans-serif;
+}
+.end .content p {
+  font-size: 17.5px;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+}
+@media (max-width: 500px) {
+  .end .content p {
+    font-size: 3.5vw;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

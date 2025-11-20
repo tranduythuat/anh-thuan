@@ -1,0 +1,116 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.location {
+    width: 100%;
+    .content {
+        width: 100%;
+        font-family: $blushing-rose-font;
+    
+        p {
+            font-size: 12.6px;
+        }
+        .header-section {
+            @include flex-center;
+            flex-direction: column;
+            padding: 10% 0 2%;
+
+            .time-and-location {
+                max-width: 185px;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            p.sub-en {
+                font-size: 10.6px;
+            }
+
+            h1.main-title {
+                font-size: 51px;
+                font-weight: 100;
+                margin-top: 8%;
+            }
+        }
+
+        .ceremony-block {
+            margin: 10% 0;
+            h2.date {
+                font-size: 42px;
+                font-weight: 100;
+                letter-spacing: 4px;
+                margin-top: 5%;
+            }
+            .location-details {
+                @include flex-center;
+                flex-direction: column;
+
+                .location-icon {
+                    max-width: 24px;
+                    width: 100%;
+                    margin: 10% 0 2%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .location-name {
+                    font-size: 20px;
+                    font-weight: 100;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .separator {
+            @include flex-center;
+            hr {
+                width:18%;
+                border: 1px solid #000;
+            }
+        }
+        .image-block {
+            width: 100%;
+            aspect-ratio: 500 / 748;
+            background: url('../../assets/images/IMG_3608.JPG') no-repeat center / cover;       
+            margin-top: 15%;     
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            p {
+                font-size: calc((12.6 / 500) * 100vw);
+            }
+            .header-section {
+                .time-and-location {
+                    max-width: calc((185 / 500) * 100vw);
+                }
+                p.sub-en {
+                    font-size: calc((10.6 / 500) * 100vw);
+                }
+    
+                h1.main-title {
+                    font-size: calc((51 / 500) * 100vw);
+                }
+            }
+    
+            .ceremony-block {
+                h2.date {
+                    font-size: calc((42 / 500) * 100vw);
+                    letter-spacing: calc((4 / 500) * 100vw);;
+    
+                }
+                .location-details {
+                    .location-icon {
+                        max-width: calc((24 / 500) * 100vw);
+                    }
+                    .location-name {
+                        font-size: calc((20 / 500) * 100vw);
+                        letter-spacing: calc((2 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+    aspect-ratio: 500 / 898;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 196, 145, 0.259)),
+                url('../../assets/images/f9881bdc-adf7-4efb-839b-a954323d6a3f.JPG') no-repeat 10% 100% / cover;
+    .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        color: white;
+        font-family: $blushing-rose-font; 
+        p.date-range {
+            font-size: 44px;
+            letter-spacing: 5px;
+            margin-bottom: 6%;
+        }
+        p.couple-names {
+            font-size: 18px;
+            margin-bottom: 5%;
+        }
+        .invited-text {
+            font-size: 12px;
+            line-height: 1.5;
+            letter-spacing: 2px;
+            margin-bottom: 14%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            p.date-range {
+                font-size: calc((44 / 500) * 100vw);
+                letter-spacing: calc((5 / 500) * 100vw);
+            }
+            p.couple-names {
+                font-size: calc((18 / 500) * 100vw);
+            }
+            .invited-text {
+                font-size: calc((12/ 500) * 100vw);
+                letter-spacing: calc((2 / 500) * 100vw);
+            }
+        }
+    }
+}
+
