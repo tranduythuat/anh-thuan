@@ -78,7 +78,12 @@
                 letter-spacing: calc((1 / 500) * 100vw);  
 
                 .initials {
-                    max-width: calc((140 / 500) * 100vw);  
+                    h2 {
+                        font-size: calc((70 / 500) * 100vw);  
+                        span {
+                            font-size: calc((30 / 500) * 100vw);  
+                        }
+                    }
                 }
 
                 .family-info {

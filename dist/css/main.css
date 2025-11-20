@@ -259,8 +259,11 @@ header {
   .invitation .content .text-box {
     letter-spacing: 0.2vw;
   }
-  .invitation .content .text-box .initials {
-    max-width: 28vw;
+  .invitation .content .text-box .initials h2 {
+    font-size: 14vw;
+  }
+  .invitation .content .text-box .initials h2 span {
+    font-size: 6vw;
   }
   .invitation .content .text-box .family-info p {
     font-size: 2.2vw;
