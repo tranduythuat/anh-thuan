@@ -142,7 +142,7 @@
           </p>
         </div>
 
-        <form action="#" method="POST">
+        <form id="rsvpForm" method="POST">
           <div class="form-group">
             <input type="text" id="name" name="name" class="text-input" placeholder="Tên của bạn - /name/" required>
           </div>
@@ -153,17 +153,17 @@
 
             <div class="attendance-buttons">
               <div class="radio-wrapper fade-up">
-                <input type="radio" id="nhagai-yes" name="nhagai_attendance" value="yes" required checked>
+                <input type="radio" id="nhagai-yes" name="confirm_nhagai" value="yes" required checked>
                 <label for="nhagai-yes" class="radio-label yes-button">SẼ THAM DỰ - /YES/</label>
               </div>
 
               <div class="radio-wrapper">
-                <input type="radio" id="nhagai-no" name="nhagai_attendance" value="no">
+                <input type="radio" id="nhagai-no" name="confirm_nhagai" value="no">
                 <label for="nhagai-no" class="radio-label no-button">KHÔNG THAM DỰ - /NO/</label>
               </div>
             </div>
 
-            <input type="number" id="nhagai-count" name="nhagai_count" class="text-input count-input" placeholder="Số người đi kèm - /Number of attendees/">
+            <input type="text" id="nhagai-count" name="attendance_nhagai" class="text-input count-input" placeholder="Số người đi kèm - /Number of attendees/">
           </div>
 
           <div class="form-group">
@@ -172,17 +172,17 @@
 
             <div class="attendance-buttons fade-up">
               <div class="radio-wrapper">
-                <input type="radio" id="nhatrai-yes" name="nhatrai_attendance" value="yes" required checked>
+                <input type="radio" id="nhatrai-yes" name="confirm_nhatrai" value="yes" required checked>
                 <label for="nhatrai-yes" class="radio-label yes-button">SẼ THAM DỰ - /YES/</label>
               </div>
               
               <div class="radio-wrapper">
-                <input type="radio" id="nhatrai-no" name="nhatrai_attendance" value="no">
+                <input type="radio" id="nhatrai-no" name="confirm_nhatrai" value="no">
                 <label for="nhatrai-no" class="radio-label no-button">KHÔNG THAM DỰ - /NO/</label>
               </div>
             </div>
 
-            <input type="number" id="nhatrai-count" name="nhatrai_count" class="text-input count-input" placeholder="Số người đi kèm - /Number of attendees/">
+            <input type="text" id="nhatrai-count" name="attendance_nhatrai" class="text-input count-input" placeholder="Số người đi kèm - /Number of attendees/">
           </div>
 
           <div class="form-group">
@@ -226,6 +226,7 @@
       type="audio/mpeg">
     </audio>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/js/gsap-animations.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
